@@ -1,9 +1,9 @@
 require 'spec_helper'
-require 'omniauth-google-oauth2'
+require 'omniauth-google'
 
-describe OmniAuth::Strategies::GoogleOauth2 do
+describe OmniAuth::Strategies::Google do
   subject do
-    OmniAuth::Strategies::GoogleOauth2.new(nil, @options || {})
+    OmniAuth::Strategies::Google.new(nil, @options || {})
   end
 
   it_should_behave_like 'an oauth2 strategy'
@@ -24,7 +24,7 @@ describe OmniAuth::Strategies::GoogleOauth2 do
 
   describe '#callback_path' do
     it "has the correct callback path" do
-      subject.callback_path.should eq('/auth/google_oauth2/callback')
+      subject.callback_path.should eq('/auth/google/callback')
     end
   end
 
